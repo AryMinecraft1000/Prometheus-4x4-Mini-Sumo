@@ -88,7 +88,7 @@ The competition firmware in [`firmware/`](firmware/) is a **PlatformIO (Arduino 
 ## Repository Structure
 
 ```text
-4x4-Mini-Sumo/
+Prometheus-4x4-Mini-Sumo/
 ├── 3D Models/
 │   ├── Prometheus Mk1.step                  # Full 3D CAD assembly (Onshape STEP)
 │   ├── Prometheus Mk1 - Chassis Base.stl
@@ -116,6 +116,7 @@ The competition firmware in [`firmware/`](firmware/) is a **PlatformIO (Arduino 
 ├── Images/                                  # Early design & CAD reference screenshots
 ├── BOM.csv                                  # Spreadsheet Bill of Materials ($277.38 total)
 ├── Prometheus-Mk1-Journal.md                # 80-hour engineering design & build log
+├── LICENSE                                  # MIT License
 └── README.md
 ```
 
