@@ -1,4 +1,4 @@
-# Prometheus Mk1 (V1) — 4×4 Autonomous Mini Sumo Robot
+# Prometheus Mk1 — 4×4 Autonomous Mini Sumo Robot
 
 **Prometheus Mk1** is an autonomous **4×4 (4WD) `10 × 10 cm`, `500 g` class Mini Sumo** competition robot designed in **Onshape** for **Techno Robotics**. Built to pack four `050`-size gearmotors, four `JS2622S` silicone wheels, four `JS40F` opponent sensors, dual `QRE1113` line sensors, a spring-loaded hinged front katana plow, and a rear anti-wedge blade inside the strict `100 × 100 mm` competition footprint, Prometheus pairs tight mechanical packaging with a fast **PlatformIO C++** firmware using single-pass port register polling and six DIP-selectable combat strategies.
 
