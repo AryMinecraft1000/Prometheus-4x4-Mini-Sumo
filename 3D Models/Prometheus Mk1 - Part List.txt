@@ -1,0 +1,10 @@
+Prometheus Mk1 (V1) - 3D-Printed Parts List
+==============================================
+Prometheus Mk1 - Chassis Base.stl        -> 1
+Prometheus Mk1 - Front Plate.stl         -> 1
+Prometheus Mk1 - Blade Bracket V2.stl    -> 1
+Prometheus Mk1 - Front Wall L.stl        -> 1
+Prometheus Mk1 - Front Wall R.stl        -> 1
+Prometheus Mk1 - IR Sensor Holder 1.stl  -> 2
+Prometheus Mk1 - IR Sensor Holder 2.stl  -> 2
+Prometheus Mk1 - Motor Cover.stl         -> 4

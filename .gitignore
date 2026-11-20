@@ -1,0 +1,10 @@
+# PlatformIO
+.pio/
+.vscode/.browse*
+.vscode/ipch/
+
+# Python / OS
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
