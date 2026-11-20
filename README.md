@@ -1,6 +1,6 @@
 # Prometheus Mk1 — 4×4 Autonomous Mini Sumo Robot
 
-**Prometheus Mk1** is an autonomous **4×4 (4WD) `10 × 10 cm`, `500 g` class Mini Sumo** competition robot designed in **Onshape** for **Techno Robotics**. Built to pack four `050`-size gearmotors, four `JS2622S` silicone wheels, four `JS40F` opponent sensors, dual `QRE1113` line sensors, a spring-loaded hinged front katana plow, and a rear anti-wedge blade inside the strict `100 × 100 mm` competition footprint, Prometheus pairs tight mechanical packaging with a fast **PlatformIO C++** firmware using single-pass port register polling and six DIP-selectable combat strategies.
+**Prometheus Mk1** is an autonomous **4×4 (4WD) `10 × 10 cm`, `500 g` class Mini Sumo** competition robot designed in **Onshape** for **Techno Robotics**. Built to pack four `050`-size gearmotors, four `JS2622S` silicone wheels, four `JS40F` opponent sensors, dual `QRE1113` line sensors, a spring-loaded hinged front katana plow, and a rear anti-wedge blade inside the strict `100 × 100 mm` competition footprint, Prometheus pairs tight mechanical packaging with a fast **PlatformIO C++** firmware using single-pass port register polling and DIP-selectable combat strategies.
 
 > Unlike remote-controlled battlebots, international Mini Sumo robots operate **100% autonomously** inside a `77 cm` black dohyo ring with a white perimeter border—using high-speed IR opponent tracking and edge-avoidance control loops to locate, out-angle, and push opponents out of the ring.
 
@@ -40,6 +40,15 @@ Prometheus Mk1 is modeled in Onshape as a single integrated `100 × 100 mm` asse
 
 ---
 
+## Competition Photo
+
+<p align="center">
+  <img src="photos/prometheus_mk1_oradea_14th.jpg?raw=true" width="65%" alt="Prometheus Mk1 at the 14th Edition of Robotics Championship in Oradea" />
+</p>
+<p align="center"><em>Prometheus Mk1 on the dohyo during the 14th Edition of the Robotics Championship in Oradea.</em></p>
+
+---
+
 ## CAD Renders & Internal X-Ray
 
 <p align="center">
@@ -61,7 +70,7 @@ Prometheus Mk1 is modeled in Onshape as a single integrated `100 × 100 mm` asse
 The competition firmware in [`firmware/`](firmware/) is a **PlatformIO (Arduino / ATmega32U4)** C++ project built around the custom [`MiniBeastV1`](firmware/lib/MiniBeastV1/) H-bridge driver:
 
 - **Single-Pass Register Sensor Polling:** `getAllOpponentSensorValues()` reads `((uint32_t)PIND << 8) | PINF` in one snapshot and applies bitmasks (`MASK_SENSOR_1..4`) for near-zero-latency 4-sensor state capture.
-- **6 DIP-Switch Combat Strategies (read at boot on `D5`, `D6`, `D7`):**
+- **DIP-Switch Combat Strategies (read at boot on `D5`, `D6`, `D7`):**
 
 | `Dip1` (`D5`) | `Dip2` (`D6`) | `Dip3` (`D7`) | Strategy | Match Behavior |
 | :---: | :---: | :---: | :--- | :--- |
@@ -70,7 +79,6 @@ The competition firmware in [`firmware/`](firmware/) is a **PlatformIO (Arduino 
 | `OFF` | `ON` | `OFF` | **`allIn`** | Full 100% power scaling (`baseSpeed = 80`, `forward1/2/3 = 100`) |
 | `OFF` | `OFF` | `ON` | **`lineTest`** | Ring-edge response test mode |
 | `ON` | `ON` | `OFF` | **`zigzag`** | Non-blocking 400 ms alternating arc search (`checkTimer()`) + direct sensor pursuit |
-| `ON` | `OFF` | `ON` | **`suicide`** | Opening 150 ms forward surge followed by 300 ms reverse-right spin |
 
 - **Graduated Turn Profiles & Sustained Charge Boost:** Defines 5 turn severities (`left1..5` / `right1..5`, from full counter-rotation to gentle arcs) and automatically promotes sustained single-sensor diagonal locks (`pos_2` or `pos_4` held `≥ 2000 ms`) to full-power `forward1()` charge.
 - **Bench Debug Modes:** Set `WhatToRun` in [`firmware/src/main.cpp`](firmware/src/main.cpp) to `printOpponentM`, `printLineM`, or `handleLineOnlyM` for serial sensor verification without triggering a match start.
@@ -98,10 +106,12 @@ The competition firmware in [`firmware/`](firmware/) is a **PlatformIO (Arduino 
 ├── firmware/
 │   ├── platformio.ini                       # PlatformIO configuration (board = leonardo)
 │   ├── src/
-│   │   ├── main.cpp                         # State machine, register polling & 6 strategies
+│   │   ├── main.cpp                         # State machine, register polling & combat strategies
 │   │   ├── headers/                         # config.h, flank.h
 │   │   └── files/                           # config.cpp, flank.cpp
 │   └── lib/MiniBeastV1/                     # Custom H-bridge motor & LED library
+├── photos/
+│   └── prometheus_mk1_oradea_14th.jpg       # 14th Robotics Championship (Oradea) competition photo
 ├── renders/                                 # 7× 1600×1200 Onshape-colored CAD & X-Ray renders
 ├── Images/                                  # Early design & CAD reference screenshots
 ├── BOM.csv                                  # Spreadsheet Bill of Materials ($277.38 total)

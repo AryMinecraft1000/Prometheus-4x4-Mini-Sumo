@@ -65,4 +65,3 @@ DIP switch states are read once at boot in `setup()` (`0` = switch ON / `LOW`, `
 | `OFF` (`1`) | `ON` (`0`) | `OFF` (`1`) | `allIn` | Full 100% forward speed (`baseSpeed = 80`, `forward1/2/3 = 100`) |
 | `OFF` (`1`) | `OFF` (`1`) | `ON` (`0`) | `lineTest` | Line-detection test mode (`handleLineDetection()`) |
 | `ON` (`0`) | `ON` (`0`) | `OFF` (`1`) | `zigzag` | Alternating 400 ms left/right arc search (`speedM1M2(7,20)` / `(20,7)`) + direct sensor pursuit |
-| `ON` (`0`) | `OFF` (`1`) | `ON` (`0`) | `suicide` | Aggressive 150 ms forward surge followed by 300 ms reverse-right spin |
