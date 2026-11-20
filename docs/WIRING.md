@@ -1,4 +1,4 @@
-# Wiring & Pinout Reference — Prometheus Mk1 (V1)
+# Wiring & Pinout Reference — Prometheus Mk1
 
 All pin assignments and direct-port register masks match [`firmware/src/main.cpp`](../firmware/src/main.cpp) and [`firmware/lib/MiniBeastV1/miniBeastV1.cpp`](../firmware/lib/MiniBeastV1/miniBeastV1.cpp) running on the **JSumo XMotion V3 / MiniBeast V1** controller (**ATmega32U4**, `board = leonardo` in `platformio.ini`).
 

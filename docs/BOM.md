@@ -1,4 +1,4 @@
-# Bill of Materials — Prometheus Mk1 (V1)
+# Bill of Materials — Prometheus Mk1
 
 Complete hardware, electronics, 3D-printed structural parts, and fastener list for **Prometheus Mk1** (4×4 Autonomous `10 × 10 cm` Mini Sumo Robot).
 
