@@ -2,6 +2,7 @@
 
 Hardware pin assignments for **Prometheus Mk1** on the **JSumo XMotion V3** controller (**ATmega32U4**, `board = leonardo`).
 
+
 ---
 
 ## ATmega32U4 Pinout Table

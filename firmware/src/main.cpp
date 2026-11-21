@@ -1,3 +1,4 @@
+// Prometheus Mk1 — 4x4 Mini Sumo Firmware
 #include <Arduino.h>
 #include <xmotionV3.h>
 #include "headers/config.h"
