@@ -1,6 +1,6 @@
 # Wiring & Pinout Reference — Prometheus Mk1
 
-Hardware pin assignments for **Prometheus Mk1** on the **JSumo XMotion V3 / MiniBeast V1** controller (**ATmega32U4**, `board = leonardo`).
+Hardware pin assignments for **Prometheus Mk1** on the **JSumo XMotion V3** controller (**ATmega32U4**, `board = leonardo`).
 
 ---
 

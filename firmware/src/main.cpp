@@ -1,9 +1,8 @@
 #include <Arduino.h>
-//#include <xmotionV3.h>
+#include <xmotionV3.h>
 #include "headers/config.h"
 #include "headers/flank.h"
 //#include <Servo.h>
-#include <miniBeastV1.h>
 
 
 /**
@@ -93,66 +92,65 @@ Speed speed{};
 
 
     void left1(){
-        movement.speedM1M2(speed.m1_Left1, speed.m2_Left1);
+        xmotion.MotorControl(speed.m1_Left1, speed.m2_Left1);
 }
     void left2(){
-        movement.speedM1M2(speed.m1_Left2, speed.m2_Left2);
+        xmotion.MotorControl(speed.m1_Left2, speed.m2_Left2);
 }
     void left3(){
-        movement.speedM1M2(speed.m1_Left3, speed.m2_Left3);
+        xmotion.MotorControl(speed.m1_Left3, speed.m2_Left3);
 }
     void left4(){
-        movement.speedM1M2(speed.m1_Left4, speed.m2_Left4);
+        xmotion.MotorControl(speed.m1_Left4, speed.m2_Left4);
 }
     void left5(){
-        movement.speedM1M2(speed.m1_Left5, speed.m2_Left5);
+        xmotion.MotorControl(speed.m1_Left5, speed.m2_Left5);
 }
     void right1(){
-        movement.speedM1M2(speed.m1_Right1, speed.m2_Right1);
+        xmotion.MotorControl(speed.m1_Right1, speed.m2_Right1);
 }
     void right2(){
-        movement.speedM1M2(speed.m1_Right2, speed.m2_Right2);
+        xmotion.MotorControl(speed.m1_Right2, speed.m2_Right2);
 }
     void right3(){
-        movement.speedM1M2(speed.m1_Right3, speed.m2_Right3);
+        xmotion.MotorControl(speed.m1_Right3, speed.m2_Right3);
 }
     void right4(){
-        movement.speedM1M2(speed.m1_Right4, speed.m2_Right4);
+        xmotion.MotorControl(speed.m1_Right4, speed.m2_Right4);
 }
     void right5(){
-        movement.speedM1M2(speed.m1_Right5, speed.m2_Right5);
+        xmotion.MotorControl(speed.m1_Right5, speed.m2_Right5);
 }
     void forward1(){
-        movement.speedM1M2(speed.forward1, speed.forward1 + (speed.forward1 / 6));
+        xmotion.MotorControl(speed.forward1, speed.forward1 + (speed.forward1 / 6));
 }
     void forward2(){
-        movement.speedM1M2(speed.forward2, speed.forward2 + (speed.forward2 / 6));
+        xmotion.MotorControl(speed.forward2, speed.forward2 + (speed.forward2 / 6));
 }
     void forward3(){
-        movement.speedM1M2(speed.forward3, speed.forward3 + (speed.forward3 / 6));
+        xmotion.MotorControl(speed.forward3, speed.forward3 + (speed.forward3 / 6));
 }
     void backwards1(){
-        movement.speedM1M2(-speed.backwards1, -speed.backwards1);
+        xmotion.MotorControl(-speed.backwards1, -speed.backwards1);
 }
     void backwards2(){
-        movement.speedM1M2(-speed.backwards2, -speed.backwards2);
+        xmotion.MotorControl(-speed.backwards2, -speed.backwards2);
 }
 
     void backwardsLeft(){
-        movement.speedM1M2(-baseSpeed * 1 / 8, -baseSpeed * 1);
+        xmotion.MotorControl(-baseSpeed * 1 / 8, -baseSpeed * 1);
     }
 
     void backwardsRight(){
-        movement.speedM1M2(-baseSpeed * 1, -baseSpeed * 1 / 8);
+        xmotion.MotorControl(-baseSpeed * 1, -baseSpeed * 1 / 8);
     }
 
     void stopMotors(){
-        movement.speedM1M2(0, 0);
+        xmotion.MotorControl(0, 0);
         delay(10);
 }
    //     void Stop(){
-    //        movement.S();
-    //}
+        //}
 
 
 
@@ -685,9 +683,9 @@ bool handleCombatAndLine(){
             if(handleLineDetection()) return false;
                 if(checkTimer(timer1, 400)){
                     if(zigzagLeft){
-                        movement.speedM1M2(7, 20 );  // Left turn
+                        xmotion.MotorControl(7, 20 );  // Left turn
                     } else {
-                        movement.speedM1M2(20, 7 );  // Right turn
+                        xmotion.MotorControl(20, 7 );  // Right turn
                     }
                     zigzagLeft = !zigzagLeft;  // Toggle direction
             }

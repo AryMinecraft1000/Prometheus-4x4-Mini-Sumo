@@ -18,7 +18,7 @@
 | **Competition Class** | Mini Sumo (`10 × 10 cm`, `500 g` max) |
 | **CAD Envelope (`Prometheus Mk1.step`)** | `100.00 mm × 100.24 mm × 38.40 mm` |
 | **Estimated Weight** | ~300 g (ASA/PETG chassis) / ~400 g (stainless steel chassis) |
-| **Controller** | JSumo XMotion V3 / MiniBeast V1 (`ATmega32U4`, `board = leonardo`) |
+| **Controller** | JSumo XMotion V3 (`ATmega32U4`, `board = leonardo`) |
 | **Drivetrain** | 4×4 Parallel Drive — 4× `050` DC Gearmotors (`LF`, `LR`, `RF`, `RR`) |
 | **Wheels** | 4× JSumo `JS2622S` Steel-Silicone Wheels (`26 × 22 mm`) |
 | **Opponent Sensors** | 4× JSumo `JS40F` Digital IR (`D2` Left, `D1` Mid-Left, `A2` Mid-Right, `A4` Right) |
@@ -65,16 +65,6 @@ Prometheus Mk1 is modeled in Onshape as a single integrated `100 × 100 mm` asse
 
 ---
 
-## Firmware Overview (`firmware/`)
-
-The firmware in [`firmware/`](firmware/) is a **PlatformIO (Arduino / ATmega32U4)** C++ project targeting the **JSumo XMotion V3 / MiniBeast V1** controller:
-
-- **Sensor Integration:** Polls the four `JS40F` digital IR opponent sensors (front-left, front-right, and left/right flanks) along with the two bottom `QRE1113` IR reflection sensors for white-border ring recovery.
-- **4×4 Drivetrain Control:** Uses the [`MiniBeastV1`](firmware/lib/MiniBeastV1/) H-bridge driver to control the left (`LF + LR`) and right (`RF + RR`) parallel motor channels via PWM speed and direction pins.
-- **Match & Strategy Control:** Supports referee start/stop module control (`A0`) and onboard DIP switch configuration (`D5`–`D7`).
-
----
-
 ## Repository Structure
 
 ```text
@@ -99,7 +89,7 @@ Prometheus-4x4-Mini-Sumo/
 │   │   ├── main.cpp                         # Autonomous control firmware
 │   │   ├── headers/                         # Configuration headers
 │   │   └── files/                           # Configuration sources
-│   └── lib/MiniBeastV1/                     # H-bridge motor & LED library
+│   └── lib/XMotionV3/                       # JSumo XMotion V3 library
 ├── photos/
 │   └── prometheus_mk1_oradea_14th.jpg       # 14th Robotics Championship (Oradea) competition photo
 ├── renders/                                 # 7× 1600×1200 Onshape-colored CAD & X-Ray renders

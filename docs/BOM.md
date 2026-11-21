@@ -8,7 +8,7 @@ Complete hardware, electronics, 3D-printed structural parts, and fastener list f
 
 | Qty | Component | Specification | Notes / Link |
 | :-: | :--- | :--- | :--- |
-| 1 | **Controller Board** | **JSumo XMotion V3** / **MiniBeast V1** All-In-One Controller (`ATmega32U4`, `80 × 30 mm`) | Dual H-bridge, voltage regulator, DIP switches, user LEDs ([JSumo](https://www.jsumo.com/xmotion-robot-controller)) |
+| 1 | **Controller Board** | **JSumo XMotion V3** All-In-One Controller (`ATmega32U4`, `80 × 30 mm`) | Dual H-bridge, voltage regulator, DIP switches, user LEDs ([JSumo](https://www.jsumo.com/xmotion-robot-controller)) |
 | 1 | **Battery** | **3S 370 mAh 11.1V LiPo** (`55 × 27 × 16 mm` bay in CAD) | Locally sourced, JST power connector |
 | 1 set | **Power Connector** | **JST Male & Female** connector pair | Battery disconnect & harness |
 
